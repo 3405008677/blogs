@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler", // 模块解析策略 Node | bundler
+    "esModuleInterop": true, // 支持 ES6 模块和 CommonJS 模块的互操作性
+    "resolveJsonModule": true, // 允许导入 JSON 文件
+    "allowImportingTsExtensions": true,
+    "jsx": "react-jsx",
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    //.
+    "baseUrl": ".", // 配置模块解析的基路径
+    "paths": {
+      "@/*": ["./src/*"],
+      "#/*": ["./types/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.ts",
+    "build/**/*.ts",
+    "build/**/*.d.ts",
+    "types/**/*.ts",
+    "types/**/*.d.ts",
+    "vite.config.ts"
+  ],
+  "exclude": ["node_modules", "dist", "**/*.js"],
+  "references": []
+}
