@@ -14,8 +14,8 @@ let localeMap: LOCALE_MAP_INTERFACE = {
  * 获取当前语言
  * @returns 返回当前语言
  */
-export function getLocale(): LOACLE_MAP_TYPE {
-  let locale = navigator.language as LOACLE_MAP_TYPE
+export function getLocale(): LOCALE_MAP_TYPE {
+  let locale = navigator.language as LOCALE_MAP_TYPE
   // 判断自身是否存在对于的语言 如果不存在 则默认是中文
   if (!localeMap.hasOwnProperty(locale)) return 'zh-CN'
   return locale
@@ -33,7 +33,7 @@ export function getLocaleMessageMap(): any {
  * 设置国际化 ——————失效
  * @param text 国际化类型 例如 'zh_CN' | 'en_Us'
  */
-export function setLocal(text: LOACLE_MAP_TYPE) {
+export function setLocal(text: LOCALE_MAP_TYPE) {
   const setLocale = appStore((state) => state.setLocale)
   setLocale(text)
 }

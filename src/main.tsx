@@ -12,8 +12,9 @@ import '/core/import'
 // 引入unocss
 import 'uno.css'
 
-import App from './App.tsx'
-import './index.css'
+import App from './layouts/page/index'
+
+console.log(import.meta.env.VITE_BASE_URL, 'import.meta.env.VITE_BASE_URL')
 
 /**
  * 看不懂  看不懂  这俩有区别吗  擦  不这样还不让 使用 zustand了

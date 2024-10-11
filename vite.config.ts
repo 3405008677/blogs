@@ -5,6 +5,7 @@ import { pathResolve, wrapperEnv, createProxy } from './build/utils'
 
 export default ({ command, mode }: ConfigEnv): UserConfig => {
   const root = process.cwd()
+
   // 加载 vite 的环境变量 env
   const env = loadEnv(mode, root)
   const viteEnv = wrapperEnv(env) // 格式化Env 数据
@@ -13,6 +14,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
   return {
     base: viteEnv.VITE_PUBLIC_PATH, //公共路径
     root, //项目根目录
+    publicDir: 'public',
     resolve: {
       alias: [
         { find: /@\//, replacement: pathResolve('src') + '/' },

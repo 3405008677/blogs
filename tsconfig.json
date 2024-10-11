@@ -22,7 +22,7 @@
     "noFallthroughCasesInSwitch": true,
     //.
 
-    "baseUrl": ".", // 配置模块解析的基路径
+    "baseUrl": "./", // 配置模块解析的基路径
     "paths": {
       "@/*": ["./src/*"],
       "#/*": ["./types/*"]
@@ -37,6 +37,9 @@
     "build/**/*.d.ts",
     "types/**/*.ts",
     "types/**/*.d.ts",
+    "core/**/*.ts",
+    "core/**/*.tsx",
+    "core/**/*.d.ts",
     "vite.config.ts"
   ],
   "exclude": ["node_modules", "dist", "**/*.js"],

@@ -1,8 +1,8 @@
 import { create } from 'zustand'
 
 interface APP_STORE_TYPE {
-  locale: LOACLE_MAP_TYPE
-  setLocale: (text: LOACLE_MAP_TYPE) => void
+  locale: LOCALE_MAP_TYPE
+  setLocale: (text: LOCALE_MAP_TYPE) => void
 }
 
 // import { appStore } from '@/store'
