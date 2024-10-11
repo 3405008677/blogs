@@ -3,14 +3,19 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { useIntl } from 'react-intl'
+import { appStore } from '@/store'
 
 function App() {
   const intl = useIntl()
   const [count, setCount] = useState(0)
+
+  const setLocale = appStore((state) => state.setLocale)
+
   return (
     <>
       <div>
         {intl.formatMessage({ id: '按钮' })}
+        {appStore((e) => e.locale)}
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -21,6 +26,8 @@ function App() {
       <h1>Vite + React</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
+        <button onClick={() => setLocale('zh-CN')}>中文</button>
+        <button onClick={() => setLocale('en-Us')}>英文</button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>

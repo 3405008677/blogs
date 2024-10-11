@@ -3,7 +3,8 @@ import { createRoot } from 'react-dom/client'
 
 // 国际化
 import { IntlProvider } from 'react-intl'
-import { locale, localeMessageMap } from './locales/index'
+import { appStore } from '@/store'
+import { getLocaleMessageMap } from './locales/index'
 
 // 引入外部文件
 import '/core/import'
@@ -14,10 +15,28 @@ import 'uno.css'
 import App from './App.tsx'
 import './index.css'
 
-createRoot(document.getElementById('root')!).render(
-  <IntlProvider locale={locale} messages={localeMessageMap as any}>
-    <StrictMode>
-      <App />
-    </StrictMode>
-  </IntlProvider>,
-)
+/**
+ * 看不懂  看不懂  这俩有区别吗  擦  不这样还不让 使用 zustand了
+ */
+
+// createRoot(document.getElementById('root')!).render(
+//   <IntlProvider locale={appStore((state) => state.locale)} messages={getLocaleMessageMap()}>
+//     <StrictMode>
+//       <App />
+//     </StrictMode>
+//   </IntlProvider>,
+// )
+
+createRoot(document.getElementById('root')!).render(<Main />)
+
+function Main() {
+  return (
+    <>
+      <IntlProvider locale={appStore((state) => state.locale)} messages={getLocaleMessageMap()}>
+        <StrictMode>
+          <App />
+        </StrictMode>
+      </IntlProvider>
+    </>
+  )
+}

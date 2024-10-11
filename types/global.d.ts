@@ -9,6 +9,14 @@ declare global {
     VITE_DROP_CONSOLE: boolean
     VITE_HTTPS: boolean
   }
+
+  // 国际化类型
+  interface LOCALE_MAP_INTERFACE extends Object {
+    'zh-CN': Record<string, string>
+    'en-Us': Record<string, string>
+  }
+
+  type LOACLE_MAP_TYPE = 'zh-CN' | 'en-Us'
 }
 declare global {
   const appStore: typeof import('@/store')['appStore']
