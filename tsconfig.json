@@ -21,11 +21,13 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     //.
+
     "baseUrl": ".", // 配置模块解析的基路径
     "paths": {
       "@/*": ["./src/*"],
       "#/*": ["./types/*"]
-    }
+    },
+    "types": ["vite/client"],
   },
   "include": [
     "src/**/*.ts",
