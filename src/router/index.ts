@@ -1,0 +1,1 @@
+import { dynamicRoutesTemplate } from './modules';  
