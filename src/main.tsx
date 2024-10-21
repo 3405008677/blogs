@@ -12,7 +12,7 @@ import '/core/import'
 // 引入unocss
 import 'uno.css'
 
-import App from './layouts/page/index'
+import Router from '@/router'
 
 console.log(import.meta.env.VITE_BASE_URL, 'import.meta.env.VITE_BASE_URL')
 
@@ -35,7 +35,7 @@ function Main() {
     <>
       <IntlProvider locale={appStore((state) => state.locale)} messages={getLocaleMessageMap()}>
         <StrictMode>
-          <App />
+          <Router />
         </StrictMode>
       </IntlProvider>
     </>

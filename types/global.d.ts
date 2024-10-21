@@ -20,6 +20,14 @@ declare global {
     'en-Us': Record<string, string>
   }
 
+  // 路由类型
+  interface RouteConfig {
+    path:string
+    element: JSX.Element
+    index?: boolean
+    children?: RouteConfig[]
+  }
+
   type LOCALE_MAP_TYPE = 'zh-CN' | 'en-Us'
 }
 declare global {

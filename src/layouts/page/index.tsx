@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <div> hello word </div>
+      <div>Hello Word</div>
     </>
   )
 }
