@@ -22,7 +22,7 @@ declare global {
 
   // 路由类型
   interface RouteConfig {
-    path:string
+    path?:string
     element: JSX.Element
     index?: boolean
     children?: RouteConfig[]

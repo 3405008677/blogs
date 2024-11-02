@@ -1,11 +1,14 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { defaultRouterList } from './modules'
+import RouterIntercept from './guard'
 
 function Router() {
   return (
     <>
       <BrowserRouter>
-        <RenderRoutes routeConfigs={defaultRouterList} />
+        <RouterIntercept>
+          <RenderRoutes routeConfigs={defaultRouterList} />
+        </RouterIntercept>
       </BrowserRouter>
     </>
   )

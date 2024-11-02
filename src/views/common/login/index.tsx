@@ -1,7 +1,11 @@
 // 登陆页面
 
 function login() {
-  return <></>
+  return (
+    <>
+      <p>login</p>
+    </>
+  )
 }
 
 export default login
