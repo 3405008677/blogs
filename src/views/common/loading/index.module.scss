@@ -1,0 +1,36 @@
+.global-loading {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  background-color: antiquewhite;
+
+  z-index: 9999;
+}
+
+// loading 组件 过渡动画
+
+/* 进入动画初始状态，元素透明 */
+.loading-transition-enter {
+  opacity: 0;
+}
+/* 进入动画活动状态，元素从透明到不透明，持续300ms */
+.loading-transition-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+/* 退出动画初始状态，元素不透明 */
+.loading-transition-exit {
+  opacity: 1;
+}
+/* 退出动画活动状态，元素从不透明到透明，持续300ms */
+.loading-transition-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
