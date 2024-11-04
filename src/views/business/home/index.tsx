@@ -1,9 +1,11 @@
 // 首页
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
-function home() {
-  const location = useLocation()
+import { appStore } from '@/store'
 
-  console.log(location, 'location')
+function home() {
+  const setLoading = appStore((state) => state.setLoading)
+  useEffect(() => {
+    setLoading(false)
+  }, [])
 
   return (
     <>

@@ -34,9 +34,10 @@ function Main() {
   return (
     <>
       <IntlProvider locale={appStore((state) => state.locale)} messages={getLocaleMessageMap()}>
-        <StrictMode>
+        {/* <StrictMode>
           <Router />
-        </StrictMode>
+        </StrictMode> */}
+          <Router />
       </IntlProvider>
     </>
   )
