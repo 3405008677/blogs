@@ -21,13 +21,13 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     //.
-
-    "baseUrl": "./", // 配置模块解析的基路径
+    "rootDir": "./", // 输入文件的根目录
+    "baseUrl": "./", // 配置模块解析的基路径 基础目录
     "paths": {
       "@/*": ["./src/*"],
       "#/*": ["./types/*"]
     },
-    "types": ["vite/client"],
+    "types": ["vite/client"]
   },
   "include": [
     "src/**/*.ts",

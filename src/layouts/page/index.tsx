@@ -1,15 +1,19 @@
 /**
  * 主页面 的布局
  */
-import { appStore } from '@/store'
+
 import DefaultLayouts from '../default'
+import Loading from '@/views/common/loading'
+import { appStore } from '@/store'
 
 function App() {
   const loading = appStore((state) => state.loading)
+
   return (
     <>
       <div>
-        <p>{loading ? '加载中' : '未加载'}</p>
+        {/* 全局 Loading 组件 */}
+        {loading && <Loading />}
         <DefaultLayouts />
       </div>
     </>
