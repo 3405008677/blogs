@@ -16,6 +16,9 @@ import Router from '@/router'
 
 console.log(import.meta.env.VITE_BASE_URL, 'import.meta.env.VITE_BASE_URL')
 
+// 引入mock
+import "../mock"
+
 /**
  * 看不懂  看不懂  这俩有区别吗  擦  不这样还不让 使用 zustand了
  */

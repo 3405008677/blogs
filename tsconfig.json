@@ -25,6 +25,7 @@
     "baseUrl": "./", // 配置模块解析的基路径 基础目录
     "paths": {
       "@/*": ["./src/*"],
+      "~/*": ["./core/*"],
       "#/*": ["./types/*"]
     },
     "types": ["vite/client"]
@@ -35,6 +36,7 @@
     "src/**/*.d.ts",
     "build/**/*.ts",
     "build/**/*.d.ts",
+    "mock/**/*.ts",
     "types/**/*.ts",
     "types/**/*.d.ts",
     "core/**/*.ts",

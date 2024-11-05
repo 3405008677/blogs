@@ -8,7 +8,7 @@ function Loading() {
   const nodeRef = useRef(null)
 
   useEffect(() => {
-    console.log('加载 Loading')
+    console.log('加载 Loading', nodeRef)
 
     return () => {
       console.log('卸载 Loading')

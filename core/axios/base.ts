@@ -1,8 +1,6 @@
 import { notification } from 'antd'
 import axios from 'axios'
 
-const [notificationApi, contextHolder] = notification.useNotification()
-
 const request = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL,
   timeout: 50000,
@@ -29,13 +27,13 @@ request.interceptors.response.use(
   (response) => {
     const { data } = response
     if (data.code === 200 || data.code === 0) return data
-    notificationApi.error({
+    notification.error({
       message: '错误!',
       description: data.msg,
     })
   },
   (err) => {
-    notificationApi.error({
+    notification.error({
       message: '错误!',
       description: '服务器发生错误',
     })
