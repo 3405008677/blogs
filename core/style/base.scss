@@ -7,33 +7,40 @@
   outline: none !important;
   text-decoration: none;
 }
+
 html {
   height: 100%;
   box-sizing: border-box;
 }
+
 body {
   height: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial,
-    sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    'Microsoft JhengHei', Arial, 'SimSun', sans-serif;
   cursor: url('/public/icon/base/default.cur'), default;
   background: #f6f6f6;
 }
+
 #app {
   height: 100%;
 }
+
 a,
 img {
   cursor: url('/public/icon/base/pointer.cur'), default;
 }
+
 .no-padding {
   padding: 0px !important;
 }
+
 div:focus {
   outline: none;
 }
+
 a {
   text-decoration: none;
   color: inherit;
@@ -71,33 +78,40 @@ a {
   display: flex;
   justify-content: center;
 }
+
 .flex-j-a {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .flex-a {
   display: flex;
   align-items: center;
 }
+
 .flex-c {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
+
 .flex-auto {
   flex: 1;
   overflow: hidden;
 }
+
 .flex-center {
   display: flex;
   flex-direction: column;
   width: 100%;
   overflow: hidden;
 }
+
 .flex-margin {
   margin: auto;
 }
+
 .flex-warp {
   display: flex;
   flex-wrap: wrap;
@@ -119,82 +133,21 @@ a {
 .w {
   width: 100%;
 }
-/* padding、margin 边距
-  ------------------------------- */
-.p1 {
-  padding: 10px;
-}
-.p2 {
-  padding: 20px;
-}
-.pl-5 {
-  padding-left: 5px;
-}
-.pr-5 {
-  padding-right: 5px;
-}
-.pt-5 {
-  padding-top: 5px;
-}
-.pb-5 {
-  padding-bottom: 5px;
-}
-.pl-10 {
-  padding-left: 10px;
-}
-.pr-10 {
-  padding-right: 10px;
-}
-.pt-10 {
-  padding-top: 10px;
-}
-.pb-10 {
-  padding-bottom: 10px;
-}
-.m1 {
-  padding: 10px;
-}
-.m2 {
-  padding: 20px;
-}
-.ml-5 {
-  padding-left: 5px;
-}
-.mr-5 {
-  padding-right: 5px;
-}
-.mt-5 {
-  padding-top: 5px;
-}
-.mb-5 {
-  padding-bottom: 5px;
-}
-.ml-10 {
-  padding-left: 10px;
-}
-.mr-10 {
-  padding-right: 10px;
-}
-.mt-10 {
-  padding-top: 10px;
-}
-.mb-10 {
-  padding-bottom: 10px;
-}
+
 /* cursor 鼠标形状
   ------------------------------- */
 
 // 默认
-.cursor-default {
+.c-default {
   cursor: url('/public/icon/base/default.cur'), default;
 }
 // 帮助
-.cursor-help {
-  cursor: help !important;
+.c-help {
+  cursor: url('public/icon/base/default.cur'), default;
 }
 // 手指
-.cursor-pointer {
-  cursor: url('/public/icon/base/pointer.cur'), default;
+.c-pointer {
+  cursor: url('public/icon/base/pointer.cur'), default;
 }
 // 移动
 .cursor-move {

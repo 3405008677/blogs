@@ -3,6 +3,9 @@ import { en_Us } from './en_Us'
 
 import { appStore } from '@/store'
 
+import type { IntlShape } from 'react-intl'
+import { useIntl } from 'react-intl'
+
 // --------------------------------------------------------
 
 let localeMap: LOCALE_MAP_INTERFACE = {
@@ -36,4 +39,14 @@ export function getLocaleMessageMap(): any {
 export function setLocal(text: LOCALE_MAP_TYPE) {
   const setLocale = appStore((state) => state.setLocale)
   setLocale(text)
+}
+
+/**
+ * 使用国际化 （封装一层）
+ */
+let intl: IntlShape
+// import { useIntls } from "@/locales"
+export function useIntls(text: string) {
+  if (!intl) intl = useIntl()
+  return intl.formatMessage({ id: text })
 }

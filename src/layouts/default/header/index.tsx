@@ -1,5 +1,5 @@
 import request from '~/axios'
-import FirstType from './first_type'
+import FirstType from './first_type/first_type'
 function header() {
   request.get('/user/router/list').then((result) => {
     console.log(result, 'result')
