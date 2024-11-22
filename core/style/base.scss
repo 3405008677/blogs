@@ -147,7 +147,7 @@ a {
 }
 // 手指
 .c-pointer {
-  cursor: url('public/icon/base/pointer.cur'), default;
+  cursor: url('public/icon/base/pointer.cur'), default !important;
 }
 // 移动
 .cursor-move {

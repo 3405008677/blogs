@@ -17,9 +17,9 @@ function first_type() {
         </div>
         <div className={styles['right'] + ' flex-j-a'}>
           <div>ICON</div>
-          <FontSizeOutlined className="ml-20px c-pointer text-20px" />
-          <ExpandOutlined className="ml-20px c-pointer text-20px" onClick={setIsFull} />
-          <GithubOutlined className="ml-20px c-pointer text-20px" onClick={() => window.open(gitHub)} />
+          <FontSizeOutlined title={useIntls('语言')} className="ml-20px c-pointer text-20px" />
+          <ExpandOutlined title={useIntls('放大')} className="ml-20px c-pointer text-20px" onClick={setIsFull} />
+          <GithubOutlined title={useIntls('GitHub')} className="ml-20px c-pointer text-20px" onClick={() => window.open(gitHub)} />
         </div>
       </div>
     </>
