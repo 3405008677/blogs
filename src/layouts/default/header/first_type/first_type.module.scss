@@ -1,16 +1,44 @@
-
-.position-header{
+.position-header {
   height: 60px;
 }
 
-
 .header {
   position: fixed;
-  align-items:center;
+  align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: $center-width;
   height: 60px;
   padding: 0 60px;
+  margin: 0 auto;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.left {
+}
+
+.right {
+}
+
+/**
+ * ----------------------------------------
+ * 左侧 Logo 动画
+ * ----------------------------------------
+ */
+.flip-scale-down-hor {
+  &:hover {
+    animation: flip-scale-down-hor 0.8s linear both;
+  }
+}
+@keyframes flip-scale-down-hor {
+  0% {
+    transform: scale(1) rotateX(0);
+  }
+  50% {
+    transform: scale(1.4) rotateX(180deg);
+  }
+  100% {
+    transform: scale(1) rotateX(360deg);
+  }
 }

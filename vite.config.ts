@@ -25,7 +25,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     css: {
       // 适合只引入scss变量，不适合全局样式
       preprocessorOptions: {
-        // scss: { additionalData: '@import "@/style/index.scss";' },
+        scss: { additionalData: '@import "@/assets/style/variable.scss";' },
       },
     },
     server: {

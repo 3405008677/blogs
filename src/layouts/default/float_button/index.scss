@@ -1,0 +1,25 @@
+// 样式穿透 设置动画
+.ant-float-btn-group {
+  .ant-float-btn-body {
+    &:hover {
+      // 旋转一圈
+      animation: rotate-center 0.6s ease-in-out both;
+    }
+  }
+}
+
+.button-group-content {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+/* 进入动画初始状态 */
+.button-group-transition-enter {
+  animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+/* 退出动画初始状态 */
+.button-group-transition-exit {
+  animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
