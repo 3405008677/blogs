@@ -11,7 +11,7 @@ function first_type() {
   return (
     <>
       {/* 占位 */}
-      <div className={styles['position-header']}></div>
+      {/* <div className={styles['position-header']}></div> */}
       {/* 内容开始 */}
       <div className={styles['header'] + ' flex'}>
         {/* 左侧 开始 */}

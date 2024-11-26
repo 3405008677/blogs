@@ -1,0 +1,22 @@
+.home-page {
+}
+
+.banner {
+  justify-content: space-between;
+}
+
+.banner-icon {
+  opacity: 0.8;
+  font-size: 26px;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0); /* 起始和结束位置都在原位 */
+  }
+  50% {
+    transform: translateY(-30px); /* 移动到上方50px的位置 */
+  }
+}
