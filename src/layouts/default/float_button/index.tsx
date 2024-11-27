@@ -7,12 +7,11 @@ import './index.scss'
 
 function float_button() {
   const floatButtonRef = useRef(null)
-  const scrollContorllerHeight = appStore((store) => store.scrollContorllerHeight)
-
   return (
     <>
-      {/* 头部导航 第一种 开始 */}
-      <CSSTransition in={scrollContorllerHeight > 200} nodeRef={floatButtonRef} timeout={600} classNames="button-group-transition" unmountOnExit>
+      {/* 悬浮按钮 开始 */}
+
+      <CSSTransition in={appStore().scrollContorllerHeight > 200} nodeRef={floatButtonRef} timeout={600} classNames="button-group-transition" unmountOnExit>
         <div ref={floatButtonRef} className="button-group-content">
           <FloatButton.Group shape="circle" trigger="click" placement="top">
             <FloatButton tooltip="1" icon={<QuestionCircleOutlined />} />
@@ -22,7 +21,7 @@ function float_button() {
         </div>
       </CSSTransition>
 
-      {/* 头部导航 第一种 结束 */}
+      {/* 悬浮按钮 结束 */}
     </>
   )
 }

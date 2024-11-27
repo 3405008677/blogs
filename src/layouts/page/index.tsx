@@ -1,15 +1,14 @@
 /**
  * 主页面 的布局
  */
-
 import DefaultLayouts from '../default'
 import Loading from '@/views/common/loading'
-
 import { appStore } from '@/store'
 
 /**
  * 设置scroll控制器高度
  */
+let scrollContorllerHeight: number
 let setScrollContorllerHeight: (value: number) => void
 /**
  * 改变头部导航配置信息中的某一个值
@@ -17,7 +16,9 @@ let setScrollContorllerHeight: (value: number) => void
 let setHeaderConfigItem: (key: string, value: any) => void
 
 function App() {
+  scrollContorllerHeight = appStore((state) => state.scrollContorllerHeight)
   setScrollContorllerHeight = appStore((state) => state.setScrollContorllerHeight)
+
   setHeaderConfigItem = appStore((state) => state.setHeaderConfigItem)
 
   useEffect(() => {
@@ -55,13 +56,15 @@ function addScrollEvent(event: Event) {
   requestAnimationFrame(() => {
     {
       // 如果 保存的高度 > 当前的高度 = 向上  || 保存的高度 < 当前的高度 = 向下
-      let type = appStore((state) => state.scrollContorllerHeight) > window.scrollY ? 'up' : appStore((state) => state.scrollContorllerHeight) < window.scrollY ? 'down' : ''
+      let type = scrollContorllerHeight > window.scrollY ? 'up' : scrollContorllerHeight < window.scrollY ? 'down' : ''
       if (!type) return
-      setHeaderConfigItem('mouseWheelDirection', type)
+
+      // setHeaderConfigItem('mouseWheelDirection', type)
+      setHeaderConfigItem('mouseWheelDirection', window.scrollY)
     }
 
     {
-      setScrollContorllerHeight(window.scrollY)
+      // setScrollContorllerHeight(window.scrollY)
     }
   })
 }
