@@ -12,20 +12,97 @@
   margin: 0 auto;
   top: 0;
   left: 50%;
+  background-color: rebeccapurple;
   transform: translateX(-50%);
+  font-size: $header-text-size;
+  overflow: hidden;
+  p {
+    color: $header-text-color;
+    font-weight: 600;
+    margin: 0 6px;
+    padding: 6px 12px;
+    letter-spacing: 6px;
+    transition: background-color 0.4s ease, border-radius 0.4s ease; // 添加过渡效果
+    &:hover {
+      background-color: $header-text-bg-color;
+      border-radius: 20px;
+    }
+  }
 }
 
 .left {
 }
 
+.middle-up {
+}
+
+.middle-down {
+}
+
 .right {
 }
 
-/**
- * ----------------------------------------
- * 左侧 Logo 动画
- * ----------------------------------------
- */
+// /**
+//  * ----------------------------------------
+//  * menu up 动画
+//  * ----------------------------------------
+//  */
+.menu-up-animation-show {
+  animation: menu-up-animation-show 0.8s linear both;
+}
+@keyframes menu-up-animation-show {
+  0% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.menu-up-animation-hide {
+  animation: menu-up-animation-hide 0.8s linear both;
+}
+@keyframes menu-up-animation-hide {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-50px);
+  }
+}
+
+// /**
+//  * ----------------------------------------
+//  * menu down 动画
+//  * ----------------------------------------
+//  */
+.menu-down-animation-show {
+  animation: menu-down-animation-show 0.8s linear both;
+}
+@keyframes menu-down-animation-show {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.menu-down-animation-hide {
+  animation: menu-down-animation-hide 0.8s linear both;
+}
+@keyframes menu-down-animation-hide {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+
+// /**
+//  * ----------------------------------------
+//  * 左侧 Logo 动画
+//  * ----------------------------------------
+//  */
 .flip-scale-down-hor {
   &:hover {
     animation: flip-scale-down-hor 0.8s linear both;

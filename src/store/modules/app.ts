@@ -3,6 +3,7 @@ import { create } from 'zustand'
 // 头部导航配置信息
 interface HEADER_CONFIG_TYPE {
   mouseWheelDirection: 'down' | 'up' // 鼠标滚轮方向  向下 | 向上
+  type:'first' // 当前头部类型
 }
 
 interface APP_STORE_TYPE {
@@ -33,6 +34,7 @@ const appStore = create<APP_STORE_TYPE>((set) => ({
   // 头部导航配置信息
   headerConfig: {
     mouseWheelDirection: 'up',
+    type:'first'
   },
   setHeaderConfigItem: (key, value) => {
     set((state) => ({

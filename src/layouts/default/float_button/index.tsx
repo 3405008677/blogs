@@ -7,6 +7,45 @@ import './index.scss'
 
 function float_button() {
   const floatButtonRef = useRef(null)
+
+  const scrollContorllerHeight = appStore((state) => state.scrollContorllerHeight)
+  const setScrollContorllerHeight = appStore((state) => state.setScrollContorllerHeight)
+  const setHeaderConfigItem = appStore((state) => state.setHeaderConfigItem)
+
+  useEffect(() => {
+    // 初始化添加事件
+    addEventListener('scroll', addScrollEvent)
+
+    return () => {
+      // 销毁组件时删除事件
+      removeEventListener('scroll', addScrollEvent)
+    }
+  }, [])
+
+  /**
+   * 添加Scroll事件监听
+   */
+  let ticking = true
+  function addScrollEvent(event: Event) {
+    // 优化 scroll 事件
+    if (!ticking) return (ticking = false)
+    requestAnimationFrame(() => {
+      {
+        // 如果 保存的高度 > 当前的高度 = 向上  || 保存的高度 < 当前的高度 = 向下
+        let type = scrollContorllerHeight > window.scrollY ? 'up' : scrollContorllerHeight < window.scrollY ? 'down' : ''
+        console.log(scrollContorllerHeight, type, window.scrollY)
+        if (type) {
+          setHeaderConfigItem('mouseWheelDirection', type)
+        }
+      }
+
+      {
+        // 更新当前 scroll控制器高度
+        setScrollContorllerHeight(window.scrollY)
+      }
+    })
+  }
+
   return (
     <>
       {/* 悬浮按钮 开始 */}
