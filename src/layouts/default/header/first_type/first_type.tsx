@@ -40,6 +40,7 @@ function first_type() {
             <p className="c-pointer">我的</p>
             <p className="c-pointer">留言</p>
             <p className="c-pointer">关于</p>
+            
           </div>
           {/* 菜单 结束 */}
           {/* 个性签名 开始 */}
@@ -47,7 +48,7 @@ function first_type() {
             ref={headerMenuMiddleDownRef}
             className={`${styles['middle-down']} flex-j-a ${headerConfig.mouseWheelDirection === 'up' ? styles['menu-down-animation-hide'] : styles['menu-down-animation-show']}`}
           >
-            {personality}
+            <p>{personality}</p>
           </div>
           {/* 个性签名 结束 */}
         </div>

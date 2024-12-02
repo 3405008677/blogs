@@ -6,13 +6,13 @@
   position: fixed;
   align-items: center;
   justify-content: space-between;
-  width: $center-width;
+  // width: $center-width;
+  width: 100%;
   height: 60px;
   padding: 0 60px;
   margin: 0 auto;
   top: 0;
   left: 50%;
-  background-color: rebeccapurple;
   transform: translateX(-50%);
   font-size: $header-text-size;
   overflow: hidden;
@@ -27,6 +27,19 @@
       background-color: $header-text-bg-color;
       border-radius: 20px;
     }
+  }
+
+  &::before {
+    display: inline-block;
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    filter: blur(60px);
+    mix-blend-mode: overlay;
   }
 }
 
@@ -68,9 +81,11 @@
 @keyframes menu-up-animation-show {
   0% {
     top: calc(50% - 60px);
+    transform: translate(-50%, -50%) rotateX(90deg);
   }
   100% {
     top: calc(50%);
+    transform: translate(-50%, -50%) rotateX(0deg);
   }
 }
 .menu-up-animation-hide {
@@ -79,9 +94,11 @@
 @keyframes menu-up-animation-hide {
   0% {
     top: calc(50%);
+    transform: translate(-50%, -50%) rotateX(0deg);
   }
   100% {
     top: calc(50% - 60px);
+    transform: translate(-50%, -50%) rotateX(90deg);
   }
 }
 
@@ -96,9 +113,11 @@
 @keyframes menu-down-animation-show {
   0% {
     top: calc(50% + 60px);
+    transform: translate(-50%, -50%) rotateX(-90deg);
   }
   100% {
     top: calc(50%);
+    transform: translate(-50%, -50%) rotateX(0deg);
   }
 }
 .menu-down-animation-hide {
@@ -107,9 +126,11 @@
 @keyframes menu-down-animation-hide {
   0% {
     top: calc(50%);
+    transform: translate(-50%, -50%) rotateX(0deg);
   }
   100% {
     top: calc(50% + 60px);
+    transform: translate(-50%, -50%) rotateX(-90deg);
   }
 }
 
