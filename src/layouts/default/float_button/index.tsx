@@ -10,7 +10,6 @@ function float_button() {
 
   const scrollContorllerHeight = appStore((state) => state.scrollContorllerHeight)
   const setScrollContorllerHeight = appStore((state) => state.setScrollContorllerHeight)
-  const setHeaderConfigItem = appStore((state) => state.setHeaderConfigItem)
 
   useEffect(() => {
     // 初始化添加事件
@@ -30,19 +29,8 @@ function float_button() {
     // 优化 scroll 事件
     if (!ticking) return (ticking = false)
     requestAnimationFrame(() => {
-      {
-        // 如果 保存的高度 > 当前的高度 = 向上  || 保存的高度 < 当前的高度 = 向下
-        let type = scrollContorllerHeight > window.scrollY ? 'up' : scrollContorllerHeight < window.scrollY ? 'down' : ''
-        console.log(scrollContorllerHeight, type, window.scrollY)
-        if (type) {
-          setHeaderConfigItem('mouseWheelDirection', type)
-        }
-      }
-
-      {
-        // 更新当前 scroll控制器高度
-        setScrollContorllerHeight(window.scrollY)
-      }
+      // 更新当前 scroll控制器高度
+      setScrollContorllerHeight(window.scrollY)
     })
   }
 
@@ -50,7 +38,7 @@ function float_button() {
     <>
       {/* 悬浮按钮 开始 */}
 
-      <CSSTransition in={appStore().scrollContorllerHeight > 200} nodeRef={floatButtonRef} timeout={600} classNames="button-group-transition" unmountOnExit>
+      <CSSTransition in={scrollContorllerHeight > 5} nodeRef={floatButtonRef} timeout={600} classNames="button-group-transition" unmountOnExit>
         <div ref={floatButtonRef} className="button-group-content">
           <FloatButton.Group shape="circle" trigger="click" placement="top">
             <FloatButton tooltip="1" icon={<QuestionCircleOutlined />} />

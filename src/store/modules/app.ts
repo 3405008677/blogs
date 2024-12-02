@@ -2,8 +2,8 @@ import { create } from 'zustand'
 
 // 头部导航配置信息
 interface HEADER_CONFIG_TYPE {
-  mouseWheelDirection: 'down' | 'up' // 鼠标滚轮方向  向下 | 向上
-  type:'first' // 当前头部类型
+  mouseWheelDirection?: 'down' | 'up' // 鼠标滚轮方向  向下 | 向上
+  type?: 'first' // 当前头部类型
 }
 
 interface APP_STORE_TYPE {
@@ -29,12 +29,29 @@ const appStore = create<APP_STORE_TYPE>((set) => ({
   setLoading: (value) => set({ loading: value }), // 设置全局加载框
 
   scrollContorllerHeight: 0, // scroll控制器高度
-  setScrollContorllerHeight: (value) => set({ scrollContorllerHeight: value }), // 设置scroll控制器高度
+  setScrollContorllerHeight: (value) => {
+    set((state) => {
+      // 如果 保存的高度 > 当前的高度 = 向上  || 保存的高度 < 当前的高度 = 向下
+      if (state.scrollContorllerHeight > value) {
+        return {
+          scrollContorllerHeight: Number(value),
+          headerConfig: { ...state.headerConfig, mouseWheelDirection: 'up' },
+        }
+      } else if (state.scrollContorllerHeight < value) {
+        return {
+          scrollContorllerHeight: Number(value),
+          headerConfig: { ...state.headerConfig, mouseWheelDirection: 'down' },
+        }
+      } else {
+        return { scrollContorllerHeight: Number(value) }
+      }
+    })
+  }, // 设置scroll控制器高度
 
   // 头部导航配置信息
   headerConfig: {
     mouseWheelDirection: 'up',
-    type:'first'
+    type: 'first',
   },
   setHeaderConfigItem: (key, value) => {
     set((state) => ({
