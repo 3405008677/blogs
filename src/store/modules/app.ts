@@ -24,7 +24,6 @@ interface APP_STORE_TYPE {
 const appStore = create<APP_STORE_TYPE>((set) => ({
   locale: 'zh-CN', // 当前语言 默认中文
   setLocale: (text) => set({ locale: text }), // 设置语言
-
   loading: false, // 全局加载框
   setLoading: (value) => set({ loading: value }), // 设置全局加载框
 

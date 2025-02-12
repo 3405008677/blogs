@@ -11,8 +11,9 @@ function RouterIntercept(props: any) {
   const location = useLocation()
 
   // 控制加载页面
-  const setLoading = appStore((state) => state.setLoading)
-  setLoading(true)
+  // const setLoading = appStore((state) => state.setLoading)
+  console.log('页面跳转，路由守卫')
+  // setLoading(true)
 
   if (!isAuthenticated && location.pathname !== '/login') {
     // 如果没有权限 并且不是登陆页面  则 跳转 登陆页面

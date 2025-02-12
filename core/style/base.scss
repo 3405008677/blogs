@@ -18,8 +18,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
-    'Microsoft JhengHei', Arial, 'SimSun', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Microsoft JhengHei', Arial, 'SimSun', sans-serif;
   cursor: url('/public/icon/base/default.cur'), default;
   background: #f6f6f6;
 }
@@ -161,6 +160,31 @@ a {
 }
 .min100vh {
   min-height: 100vh !important;
+}
+
+/* 设置滚动条样式
+  ------------------------------- */
+/* 设置滚动条的整体样式 */
+::-webkit-scrollbar {
+  width: 8px; /* 垂直滚动条的宽度 */
+  height: 8px; /* 水平滚动条的高度 */
+}
+
+/* 设置滚动条的轨道 */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* 轨道背景色 */
+  border-radius: 10px; /* 圆角 */
+}
+
+/* 设置滚动条的滑块 */
+::-webkit-scrollbar-thumb {
+  background: #59d6ff ; /* 滑块颜色 */
+  border-radius: 10px; /* 圆角 */
+}
+
+/* 设置滚动条滑块悬停时的样式 */
+::-webkit-scrollbar-thumb:hover {
+  background: #23c3f8 ; /* 悬停时的颜色 */
 }
 
 /* 颜色值

@@ -5,6 +5,7 @@ import { setIsFull } from '@/layouts/default/utils'
 import { useIntls } from '@/locales'
 import { Html5Outlined } from '@ant-design/icons'
 import { appStore, userStore } from '@/store'
+import LanguageComponent, { LanguageComponentType } from '@/components/Language'
 
 function first_type() {
   const gitHub = userStore((state) => state.gitHub)
@@ -14,6 +15,13 @@ function first_type() {
 
   const headerMenuMiddleUpRef = useRef<HTMLDivElement>(null)
   const headerMenuMiddleDownRef = useRef<HTMLDivElement>(null)
+
+  const languageRef = useRef<LanguageComponentType>(null)
+
+  // 打开 国际化组件弹窗
+  const openLanguageComponent = () => {
+    languageRef.current?.showModal()
+  }
 
   return (
     <>
@@ -35,12 +43,11 @@ function first_type() {
             ref={headerMenuMiddleUpRef}
             className={`${styles['middle-up']} flex-j-a ${headerConfig.mouseWheelDirection === 'up' ? styles['menu-up-animation-show'] : styles['menu-up-animation-hide']}`}
           >
-            <p className="c-pointer">首页</p>
-            <p className="c-pointer">文章</p>
-            <p className="c-pointer">我的</p>
-            <p className="c-pointer">留言</p>
-            <p className="c-pointer">关于</p>
-            
+            <p className="c-pointer">{useIntls('首页')}</p>
+            <p className="c-pointer">{useIntls('文章')}</p>
+            <p className="c-pointer">{useIntls('我的')}</p>
+            <p className="c-pointer">{useIntls('留言')}</p>
+            <p className="c-pointer">{useIntls('关于')}</p>
           </div>
           {/* 菜单 结束 */}
           {/* 个性签名 开始 */}
@@ -58,11 +65,17 @@ function first_type() {
         {/* 右侧 开始 */}
         <div className={styles['right'] + ' flex-j-a'}>
           <div>ICON</div>
-          <FontSizeOutlined title={useIntls('语言')} className="ml-20px c-pointer text-20px" />
+          <FontSizeOutlined title={useIntls('语言')} className="ml-20px c-pointer text-20px" onClick={openLanguageComponent} />
           <ExpandOutlined title={useIntls('全屏')} className="ml-20px c-pointer text-20px" onClick={setIsFull} />
           <GithubOutlined title="GitHub" className="ml-20px c-pointer text-20px" onClick={() => window.open(gitHub)} />
         </div>
         {/* 右侧 结束 */}
+
+        {/* 组件 */}
+        {/* 国际化 */}
+        <LanguageComponent ref={languageRef} />
+        {/* 国际化 */}
+        {/* 组件 */}
       </div>
     </>
   )

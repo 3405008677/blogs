@@ -25,11 +25,11 @@ export function getLocale(): LOCALE_MAP_TYPE {
 }
 
 /**
- * 获取对于语言的国际化数据 ——————失效
+ * 获取对于语言的国际化数据
  * @param text 国际化类型 例如 'zh_CN' | 'en_Us'
  */
-export function getLocaleMessageMap(): any {
-  return localeMap[appStore((state) => state.locale)]
+export function getLocaleMessageMap(locale: LOCALE_MAP_TYPE): any {
+  return localeMap[locale]
 }
 
 /**

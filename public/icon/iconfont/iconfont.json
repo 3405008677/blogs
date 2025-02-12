@@ -1,0 +1,79 @@
+{
+  "id": "4064047",
+  "name": "元术官网",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "7698764",
+      "name": "英国",
+      "font_class": "yingguo",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "15933094",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "4326740",
+      "name": "美国国旗",
+      "font_class": "meiguoguoqi",
+      "unicode": "e828",
+      "unicode_decimal": 59432
+    },
+    {
+      "icon_id": "6341842",
+      "name": "中文",
+      "font_class": "zhongwen",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "7049843",
+      "name": "日本",
+      "font_class": "riben",
+      "unicode": "e6a9",
+      "unicode_decimal": 59049
+    },
+    {
+      "icon_id": "7974372",
+      "name": "葡萄牙",
+      "font_class": "putaoya",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "7974395",
+      "name": "西班牙",
+      "font_class": "xibanya",
+      "unicode": "e669",
+      "unicode_decimal": 58985
+    },
+    {
+      "icon_id": "10132777",
+      "name": "意大利",
+      "font_class": "yidali",
+      "unicode": "e6a6",
+      "unicode_decimal": 59046
+    },
+    {
+      "icon_id": "11055878",
+      "name": "法国",
+      "font_class": "faguo",
+      "unicode": "e6bb",
+      "unicode_decimal": 59067
+    },
+    {
+      "icon_id": "11158716",
+      "name": "德国",
+      "font_class": "deguo",
+      "unicode": "e6ba",
+      "unicode_decimal": 59066
+    }
+  ]
+}

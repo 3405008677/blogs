@@ -17,7 +17,7 @@ import Router from '@/router'
 console.log(import.meta.env.VITE_BASE_URL, 'import.meta.env.VITE_BASE_URL')
 
 // 引入mock
-import "../mock"
+import '../mock'
 
 /**
  * 看不懂  看不懂  这俩有区别吗  擦  不这样还不让 使用 zustand了
@@ -25,22 +25,26 @@ import "../mock"
 
 // createRoot(document.getElementById('root')!).render(
 //   <IntlProvider locale={appStore((state) => state.locale)} messages={getLocaleMessageMap()}>
-//     <StrictMode>
-//       <App />
-//     </StrictMode>
+
 //   </IntlProvider>,
 // )
 
 createRoot(document.getElementById('root')!).render(<Main />)
 
 function Main() {
+  const locale = appStore((state) => state.locale)
+
+  useEffect(() => {
+    console.log('语言被改变了locale', locale)
+  }, [locale])
+
   return (
     <>
-      <IntlProvider locale={appStore((state) => state.locale)} messages={getLocaleMessageMap()}>
+      <IntlProvider locale={locale} messages={getLocaleMessageMap(locale)}>
         {/* <StrictMode>
           <Router />
         </StrictMode> */}
-          <Router />
+        <Router />
       </IntlProvider>
     </>
   )
