@@ -9,6 +9,7 @@ const zh_CN: Record<string, string> = {
   我的:'我的',
   留言:'留言',
   关于:'关于',
+  加载中:'加载中',
 }
 
 export { zh_CN }

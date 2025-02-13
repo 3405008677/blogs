@@ -3,7 +3,14 @@ import { appStore } from '@/store'
 
 import styles from './index.module.scss'
 
+import { useIntl } from 'react-intl'
+
 function Loading() {
+  const intl = useIntl()
+  const useIntls = (text: string) => {
+    return intl.formatMessage({ id: text })
+  }
+
   const loading = appStore((state) => state.loading)
   const nodeRef = useRef(null)
 
@@ -17,15 +24,9 @@ function Loading() {
 
   return (
     <>
-      <CSSTransition
-        in={loading}
-        nodeRef={nodeRef}
-        timeout={300}
-        classNames="loading-transition"
-        unmountOnExit
-      >
+      <CSSTransition in={loading} nodeRef={nodeRef} timeout={300} classNames="loading-transition" unmountOnExit>
         <div ref={nodeRef} className={styles['global-loading']}>
-          <p>加载 Loading</p>
+          <p>{useIntls('加载中')}</p>
         </div>
       </CSSTransition>
     </>

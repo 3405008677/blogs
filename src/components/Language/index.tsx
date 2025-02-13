@@ -1,8 +1,9 @@
 import { Modal } from 'antd'
 import { createFromIconfontCN } from '@ant-design/icons'
 import styles from './index.module.scss'
-import { useIntls } from '@/locales'
 import { appStore } from '@/store'
+
+import { useIntl } from 'react-intl'
 
 export interface LanguageComponentType {
   showModal: () => void
@@ -13,6 +14,11 @@ const IconFont = createFromIconfontCN({
 })
 
 const LanguageComponent = forwardRef<LanguageComponentType>((props, ref) => {
+  const intl = useIntl()
+  const useIntls = (text: string) => {
+    return intl.formatMessage({ id: text })
+  }
+
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const showModal = () => {

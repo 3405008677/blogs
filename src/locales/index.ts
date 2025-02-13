@@ -1,17 +1,22 @@
 import { zh_CN } from './zh_CN'
 import { en_Us } from './en_Us'
 
-import { appStore } from '@/store'
-
-import type { IntlShape } from 'react-intl'
-import { useIntl } from 'react-intl'
-
 // --------------------------------------------------------
 
 let localeMap: LOCALE_MAP_INTERFACE = {
   'zh-CN': zh_CN,
   'en-Us': en_Us,
 }
+
+/**
+ * 设置国际化只能在 hooks 中使用  哎
+ * 下面是模板
+ */
+// import { useIntl } from 'react-intl'
+// const intl = useIntl()
+// const useIntls = (text: string) => {
+//   return intl.formatMessage({ id: text })
+// }
 
 /**
  * 获取当前语言
@@ -30,23 +35,4 @@ export function getLocale(): LOCALE_MAP_TYPE {
  */
 export function getLocaleMessageMap(locale: LOCALE_MAP_TYPE): any {
   return localeMap[locale]
-}
-
-/**
- * 设置国际化 ——————失效
- * @param text 国际化类型 例如 'zh_CN' | 'en_Us'
- */
-export function setLocal(text: LOCALE_MAP_TYPE) {
-  const setLocale = appStore((state) => state.setLocale)
-  setLocale(text)
-}
-
-/**
- * 使用国际化 （封装一层）
- */
-let intl: IntlShape
-// import { useIntls } from "@/locales"
-export function useIntls(text: string) {
-  if (!intl) intl = useIntl()
-  return intl.formatMessage({ id: text })
 }

@@ -9,6 +9,7 @@ const en_Us: Record<string, string> = {
   我的:'我的-英文',
   留言:'留言-英文',
   关于:'关于-英文',
+  加载中:'Loading',
 }
 
 export { en_Us }

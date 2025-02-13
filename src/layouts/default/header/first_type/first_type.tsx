@@ -2,12 +2,18 @@ import styles from './first_type.module.scss'
 import './first_type.module.scss'
 import { ExpandOutlined, GithubOutlined, FontSizeOutlined } from '@ant-design/icons'
 import { setIsFull } from '@/layouts/default/utils'
-import { useIntls } from '@/locales'
 import { Html5Outlined } from '@ant-design/icons'
 import { appStore, userStore } from '@/store'
 import LanguageComponent, { LanguageComponentType } from '@/components/Language'
+import { useIntl } from 'react-intl'
 
 function first_type() {
+  const intl = useIntl()
+
+  const useIntls = (text: string) => {
+    return intl.formatMessage({ id: text })
+  }
+
   const gitHub = userStore((state) => state.gitHub)
   const personality = userStore((state) => state.personality)
 
