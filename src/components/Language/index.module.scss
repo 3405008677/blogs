@@ -1,7 +1,41 @@
 .content {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   font-size: 50px;
+  max-height: 700px;
+  overflow: auto;
+}
+
+.items {
+  width: 100%;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease-in-out; // 背景色过渡效果
+  position: relative;
+  height: 50px;
+
+  > div {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 40%;
+  }
+
+  p {
+    transform: translateX(-50%);
+    opacity: 0;
+    font-size: 18px;
+    padding-left: 20px;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; // 添加过渡效果
+  }
+
+  &:hover {
+    background-color: antiquewhite;
+
+    p {
+      opacity: 1;
+      transform: translateX(0px); // 鼠标悬停时的效果
+    }
+  }
 }

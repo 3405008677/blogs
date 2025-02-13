@@ -3,6 +3,7 @@ import Page_404 from '@/views/common/404'
 import Login from '@/views/common/login'
 import Root from '@/layouts/page'
 import Home from '@/views/business/home'
+import Info from '@/views/business/info'
 
 /**
  * 默认路由
@@ -20,6 +21,10 @@ const defaultRouterList: RouteConfig[] = [
       {
         path: '/home',
         element: <Home />,
+      },
+      {
+        path: '/info',
+        element: <Info />,
       },
     ],
   },

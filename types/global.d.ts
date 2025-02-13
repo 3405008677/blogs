@@ -17,7 +17,7 @@ declare global {
   // 国际化类型
   interface LOCALE_MAP_INTERFACE extends Object {
     'zh-CN': Record<string, string>
-    'en-Us': Record<string, string>
+    'en-US': Record<string, string>
   }
 
   // 路由类型
@@ -28,7 +28,7 @@ declare global {
     children?: RouteConfig[]
   }
 
-  type LOCALE_MAP_TYPE = 'zh-CN' | 'en-Us'
+  type LOCALE_MAP_TYPE = 'zh-CN' | 'en-US'
 }
 declare global {
   const appStore: typeof import('@/store')['appStore']

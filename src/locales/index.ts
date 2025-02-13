@@ -1,11 +1,11 @@
 import { zh_CN } from './zh_CN'
-import { en_Us } from './en_Us'
+import { en_US } from './en_Us'
 
 // --------------------------------------------------------
 
 let localeMap: LOCALE_MAP_INTERFACE = {
   'zh-CN': zh_CN,
-  'en-Us': en_Us,
+  'en-US': en_US,
 }
 
 /**

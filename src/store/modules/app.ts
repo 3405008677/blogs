@@ -13,6 +13,11 @@ interface APP_STORE_TYPE {
   loading: boolean // 全局加载框
   setLoading: (value: boolean) => void // 设置全局加载框
 
+  theme: string // 当前系统主题
+  themeList: any[] // 主题列表
+  setTheme: (theme: string) => void // 设置当前主题
+  addTheme: (theme: object) => void // 向本地添加自定义的主题
+
   scrollContorllerHeight: number // scroll控制器高度
   setScrollContorllerHeight: (value: number) => void // 设置scroll控制器高度
 
@@ -24,8 +29,16 @@ interface APP_STORE_TYPE {
 const appStore = create<APP_STORE_TYPE>((set) => ({
   locale: 'zh-CN', // 当前语言 默认中文
   setLocale: (text) => set({ locale: text }), // 设置语言
+
   loading: false, // 全局加载框
   setLoading: (value) => set({ loading: value }), // 设置全局加载框
+
+  theme: '', // 当前系统主题
+  themeList: [], // 主题列表
+  setTheme: (theme: string) => set({ theme }), // 设置当前主题
+  addTheme: (theme: object) => {
+    set((state) => ({ themeList: { ...state.themeList, theme } }))
+  }, // 向本地添加自定义的主题
 
   scrollContorllerHeight: 0, // scroll控制器高度
   setScrollContorllerHeight: (value) => {

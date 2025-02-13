@@ -1,12 +1,10 @@
 // 首页
-import { appStore } from '@/store'
 import { DoubleRightOutlined } from '@ant-design/icons'
 import styles from './index.module.scss'
 
 function home() {
-  const setLoading = appStore((state) => state.setLoading)
   useEffect(() => {
-    setLoading(false)
+    console.log('初始化 homne ')
   }, [])
 
   return (
@@ -24,7 +22,7 @@ function home() {
 
           {/* 底部icon 开始 */}
           <div className={styles['banner-icon']}>
-            <DoubleRightOutlined className='c-pointer' rotate={90} onClick={() => scrollTo(window.innerHeight)} />
+            <DoubleRightOutlined className="c-pointer" rotate={90} onClick={() => scrollTo(window.innerHeight)} />
           </div>
           {/* 底部icon 结束 */}
         </div>

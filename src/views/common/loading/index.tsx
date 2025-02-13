@@ -16,7 +16,6 @@ function Loading() {
 
   useEffect(() => {
     console.log('加载 Loading', nodeRef)
-
     return () => {
       console.log('卸载 Loading')
     }
@@ -24,6 +23,7 @@ function Loading() {
 
   return (
     <>
+      {/* false 隐藏组件  true 显示组件 */}
       <CSSTransition in={loading} nodeRef={nodeRef} timeout={300} classNames="loading-transition" unmountOnExit>
         <div ref={nodeRef} className={styles['global-loading']}>
           <p>{useIntls('加载中')}</p>

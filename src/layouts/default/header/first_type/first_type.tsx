@@ -29,6 +29,18 @@ function first_type() {
     languageRef.current?.showModal()
   }
 
+  /**
+   * 路由跳转
+   * @param to 指定路由地址
+   */
+  const navigate = useNavigate()
+  const setLoading = appStore((state) => state.setLoading)
+
+  const routerPush = (to: string) => {
+    setLoading(true)
+    navigate(to, { replace: false })
+  }
+
   return (
     <>
       {/* 占位 */}
@@ -49,9 +61,13 @@ function first_type() {
             ref={headerMenuMiddleUpRef}
             className={`${styles['middle-up']} flex-j-a ${headerConfig.mouseWheelDirection === 'up' ? styles['menu-up-animation-show'] : styles['menu-up-animation-hide']}`}
           >
-            <p className="c-pointer">{useIntls('首页')}</p>
+            <p onClick={() => routerPush('home')} className="c-pointer">
+              {useIntls('首页')}
+            </p>
             <p className="c-pointer">{useIntls('文章')}</p>
-            <p className="c-pointer">{useIntls('我的')}</p>
+            <p onClick={() => routerPush('info')} className="c-pointer">
+              {useIntls('我的')}
+            </p>
             <p className="c-pointer">{useIntls('留言')}</p>
             <p className="c-pointer">{useIntls('关于')}</p>
           </div>

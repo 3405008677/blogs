@@ -4,7 +4,7 @@ import styles from './index.module.scss'
 
 function header() {
   request.get('/user/router/list').then((result) => {
-    console.log(result, 'result')
+    console.log(result, '获取路由信息')
   })
 
   return (

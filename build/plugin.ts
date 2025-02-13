@@ -14,14 +14,14 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   //
   vitePlugins.push(
     AutoImport({
-      imports: ['react'],
+      imports: ['react', 'react-router-dom'],
       dts: pathResolve('types/AutoImportReact.d.ts'),
     }),
   )
 
   vitePlugins.push(
     UnoCSS({
-      configFile: "/build/unocss.config.ts",
+      configFile: '/build/unocss.config.ts',
     }),
   )
 
